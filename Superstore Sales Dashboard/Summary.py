@@ -95,7 +95,8 @@ st.sidebar.header("🔎 Filter Data")
 # This becomes the primary comparison axis (current vs previous year)
 selected_year = st.sidebar.selectbox(
     "Select Year",
-    sorted(df["Year"].unique())
+    sorted(df["Year"].unique()),
+    index = 3
 )
 
 # Quarter intentionally kept optional (future extensibility)
