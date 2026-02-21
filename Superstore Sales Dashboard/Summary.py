@@ -43,15 +43,16 @@ def load_data():
     4. Merge everything into one dataframe
     """
 
-    # --- Load individual datasets ---
-    # Orders contains transactional level data (Sales, Profit etc.)
-    orders = pd.read_csv("data/Superstore_Orders.csv")
+    # Path of current script (Summary.py)
+    base_path = os.path.dirname(__file__)
 
-    # People contains mapping of Region → Regional Manager
-    people = pd.read_csv("data/Superstore_People.csv")
+    # Build path to data folder inside the same project folder
+    data_path = os.path.join(base_path, "data")
 
-    # Returns contains list of Order IDs that were returned
-    returns = pd.read_csv("data/Superstore_Returns.csv")
+    # Read CSV files safely
+    orders = pd.read_csv(os.path.join(data_path, "Superstore_Orders.csv"))
+    people = pd.read_csv(os.path.join(data_path, "Superstore_People.csv"))
+    returns = pd.read_csv(os.path.join(data_path, "Superstore_Returns.csv"))
 
     # --- Convert date columns to proper datetime ---
     # This is critical for time-based filtering and trend charts
