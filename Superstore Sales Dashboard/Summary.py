@@ -271,7 +271,7 @@ with col1:
         y="Sales_curr:Q"
     )
 
-    st.altair_chart(prev_sales_bar + curr_sales_bar, use_container_width=True)
+    st.altair_chart(prev_sales_bar + curr_sales_bar, width='stretch')
 
 
 # ---------------- PROFIT RATIO BULLET CHART ----------------
@@ -297,4 +297,4 @@ with col2:
         )
     )
 
-    st.altair_chart(prev_ratio_bar + curr_ratio_bar, use_container_width=True)
+    st.altair_chart(prev_ratio_bar + curr_ratio_bar, width='stretch')
